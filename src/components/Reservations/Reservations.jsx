@@ -1,4 +1,4 @@
-import './Reservations.css'
+import './Reservations.css';
 import Card from '../Card/Card';
 
 export default function Reservations({ reservations }) {
@@ -6,5 +6,5 @@ export default function Reservations({ reservations }) {
     return <Card reservation={res} key={res.id} />;
   });
 
-  return <>{cards}</>;
+  return <div className='resy-container'>{cards}</div>;
 }

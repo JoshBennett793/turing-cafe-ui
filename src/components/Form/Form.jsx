@@ -1,11 +1,12 @@
+import './Form.css'
 import { useState } from 'react';
 
-export default function Form() {
+export default function Form({ updateReservations }) {
   const [formData, setFormData] = useState({
     name: '',
     date: '',
     time: '',
-    number: 0
+    number: ''
   });
 
   const handleChange = e => {
@@ -18,8 +19,13 @@ export default function Form() {
     });
   };
 
+  const submitForm = e => {
+    e.preventDefault()
+    updateReservations(formData)
+  }
+
   return (
-    <form>
+    <form className='res-form' onSubmit={submitForm}>
       <input
         type='text'
         name='name'
@@ -52,6 +58,7 @@ export default function Form() {
         onChange={handleChange}
         value={formData.number}
       />
+      <button type='submit' className='submit-btn'>Make Reservation</button>
     </form>
   );
 }
