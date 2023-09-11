@@ -1,3 +1,5 @@
+import './Card.css'
+
 export default function Card({ reservation }) {
   const { name, date, time, number } = reservation;
 
