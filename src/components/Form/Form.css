@@ -1,0 +1,19 @@
+.res-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+
+  > * {
+    height: 2em;
+    width: 12em;
+  }
+
+  > input {
+    padding-left: .5em;
+  }
+
+  > .submit-btn {
+    background-color: teal;
+    border: 1px solid white;
+  }
+}
