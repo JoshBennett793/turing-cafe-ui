@@ -1,3 +1,4 @@
+import './Reservations.css'
 import Card from '../Card/Card';
 
 export default function Reservations({ reservations }) {
