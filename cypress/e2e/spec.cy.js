@@ -32,10 +32,20 @@ describe('empty spec', () => {
 
   it('Should render a newly added reservation', () => {
     cy.get('input[name="name"]').type('Josh');
+    cy.get('input[name="name"]').should('have.value', 'Josh');
+
     cy.get('input[name="date"]').type('12/12');
+    cy.get('input[name="date"]').should('have.value', '12/12');
+
     cy.get('input[name="time"]').type('6:30');
+    cy.get('input[name="time"]').should('have.value', '6:30');
+
     cy.get('input[name="number"]').type('2');
+    cy.get('input[name="number"]').should('have.value', '2');
+
     cy.get('.submit-btn').click()
+
+
 
     cy.get('.resy-container').children().last().within(() => {
       cy.get('li').eq(0).should('have.text', 'Josh')
