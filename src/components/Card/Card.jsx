@@ -8,8 +8,8 @@ export default function Card({ reservation }) {
       <ul>
         <li>{name}</li>
         <li>{date}</li>
-        <li>{time}</li>
-        <li>{number}</li>
+        <li>{time} pm</li>
+        <li>Number of guests: {number}</li>
       </ul>
     </div>
   );
