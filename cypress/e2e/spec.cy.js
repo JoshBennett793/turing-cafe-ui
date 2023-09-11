@@ -29,4 +29,20 @@ describe('empty spec', () => {
       .children()
       .should('have.length', 4);
   });
+
+  it('Should render a newly added reservation', () => {
+    cy.get('input[name="name"]').type('Josh');
+    cy.get('input[name="date"]').type('12/12');
+    cy.get('input[name="time"]').type('6:30');
+    cy.get('input[name="number"]').type('2');
+    cy.get('.submit-btn').click()
+
+    cy.get('.resy-container').children().last().within(() => {
+      cy.get('li').eq(0).should('have.text', 'Josh')
+      cy.get('li').eq(1).should('have.text', '12/12')
+      cy.get('li').eq(2).should('have.text', '6:30 pm')
+      cy.get('li').eq(3).should('have.text', 'Number of guests: 2')
+    })
+    
+  });
 });
