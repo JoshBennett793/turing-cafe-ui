@@ -1,4 +1,4 @@
-import './Form.css'
+import './Form.css';
 import { useState } from 'react';
 
 export default function Form({ updateReservations }) {
@@ -20,9 +20,9 @@ export default function Form({ updateReservations }) {
   };
 
   const submitForm = e => {
-    e.preventDefault()
-    updateReservations(formData)
-  }
+    e.preventDefault();
+    updateReservations(formData);
+  };
 
   return (
     <form className='res-form' onSubmit={submitForm}>
@@ -58,7 +58,9 @@ export default function Form({ updateReservations }) {
         onChange={handleChange}
         value={formData.number}
       />
-      <button type='submit' className='submit-btn'>Make Reservation</button>
+      <button type='submit' className='submit-btn'>
+        Make Reservation
+      </button>
     </form>
   );
 }
